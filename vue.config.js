@@ -18,8 +18,8 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     open: true,
-    host: '0.0.0.0',
-    port: 8808
+    host: '127.0.0.1',
+    port: 9001,
     // 由于本项目数据通过easy-mock和mockjs模拟，不存在跨域问题，无需配置代理;
     // proxy: { 
     //   '/v2': {
@@ -27,6 +27,7 @@ module.exports = {
     //       changeOrigin: true
     //   }
     // }
+    disableHostCheck: true,         //跳过域名检查,可以使用manage.leyou.com
   },
    // webpack相关配置
   chainWebpack: (config) => {
