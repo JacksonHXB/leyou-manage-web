@@ -1,8 +1,8 @@
 <template>
     <header class="head-nav rflex " id='header_container'>
         <div class='logo-container rflex'>
-            <img class="logo" :src="logo" alt="小爱admin">
-            <span class='title'>小爱<i>Admin</i></span>
+            <img class="logo" :src="logo" alt="乐优Admin">
+            <span class='title'>乐优<i>Admin</i></span>
         </div>
         <div class="right-nav" ref="rightNav">
             <top-menu></top-menu>
