@@ -13,7 +13,6 @@ function filterTopRouterMap(name) {
 	});
 	return router.data; // arr
 }
-console.log(filterTopRouterMap('infoShow'))
 
 /**
  * 1、roles:后台返回的权限结构;
@@ -72,84 +71,33 @@ export default new Router({
 //异步路由（需要权限的页面）
 export const asyncRouterMap = [
 	{
-		path: '/infoManage',
-		name: 'infoManage',
+		path: '/productManage',
+		name: 'fundManage',
 		meta: {
 			title: '商品管理',
-			icon: 'fa-asterisk',
+			icon: 'fa-money',
 		},
 		component: Layout,
 		children: [
 			{
-				path: 'infoShow',
-				name: 'infoShow',
+				path: 'category',
+				name: 'fundList',
 				meta: {
 					title: '分类管理',
 					icon: 'fa-asterisk',
-					routerType: 'leftmenu',
-					titleList: [
-						{ "path": "infoShow1", "title": "个人信息子菜单1" },
-						{ "path": "infoShow2", "title": "个人信息子菜单2" },
-						{ "path": "infoShow3", "title": "个人信息子菜单3" },
-						{ "path": "infoShow4", "title": "个人信息子菜单4" },
-						{ "path": "infoShow5", "title": "个人信息子菜单5" },
-						{ "path": "infoShow6", "title": "个人信息子菜单6" }
-					]
+					routerType: 'leftmenu'
 				},
-				component: Content,
-				// redirect:'/infoManage/infoShow/infoShow1',
-				children: filterTopRouterMap('infoShow')
+				component: () => import('@/page/product/categoryList'),
 			},
 			{
-				path: 'infoModify',
-				name: 'infoModify',
+				path: 'chinaTabsList',
+				name: 'chinaTabsList',
 				meta: {
 					title: '品牌管理',
 					icon: 'fa-asterisk',
-					routerType: 'leftmenu',
-					titleList: [
-						{ "path": "infoModify1", "title": "修改信息子菜单1" },
-						{ "path": "infoModify2", "title": "修改信息子菜单2" },
-						{ "path": "infoModify3", "title": "修改信息子菜单3" }
-					]
+					routerType: 'leftmenu'
 				},
-				//component: () => import('@/page/infoManage/infoModify'),
-				component: Content,
-				children: filterTopRouterMap('infoModify')
-			},
-			{
-				path: 'infoModify',
-				name: 'infoModify',
-				meta: {
-					title: '商品列表',
-					icon: 'fa-asterisk',
-					routerType: 'leftmenu',
-					titleList: [
-						{ "path": "infoModify1", "title": "修改信息子菜单1" },
-						{ "path": "infoModify2", "title": "修改信息子菜单2" },
-						{ "path": "infoModify3", "title": "修改信息子菜单3" }
-					]
-				},
-				//component: () => import('@/page/infoManage/infoModify'),
-				component: Content,
-				children: filterTopRouterMap('infoModify')
-			},
-			{
-				path: 'infoModify',
-				name: 'infoModify',
-				meta: {
-					title: '规格参数',
-					icon: 'fa-asterisk',
-					routerType: 'leftmenu',
-					titleList: [
-						{ "path": "infoModify1", "title": "修改信息子菜单1" },
-						{ "path": "infoModify2", "title": "修改信息子菜单2" },
-						{ "path": "infoModify3", "title": "修改信息子菜单3" }
-					]
-				},
-				//component: () => import('@/page/infoManage/infoModify'),
-				component: Content,
-				children: filterTopRouterMap('infoModify')
+				component: () => import('@/page/fundList/chinaTabsList'),
 			}
 		]
 	},

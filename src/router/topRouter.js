@@ -11,7 +11,7 @@ export const topRouterMap = [
                     icon: 'fa-asterisk',
                     routerType: 'topmenu'
                 },
-                component: () => import('@/page/infoManage/infoShow')
+                component: () => import('@/page/product/categoryList')
             },
         ]
     },
